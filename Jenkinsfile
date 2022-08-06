@@ -76,7 +76,7 @@ pipeline {
           withCredentials([usernamePassword(credentialsId: 'jfrog-rk-demo', passwordVariable: 'jfrogArtifactoryPassword', usernameVariable: 'jfrogArtifactoryUsername')]) {
           sh "docker login -u ${env.jfrogArtifactoryUsername} -p ${env.jfrogArtifactoryPassword} rkdemo.jfrog.io"
           sh 'docker push ${JFROG_ARTIFACTORY_REPO_NAME}/${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_VERSION_MAIN}.$BUILD_NUMBER'
-          sh 'docker push ${JFROG_ARTIFACTORY_REPO_NAME}/${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_VERSION_MAIN}.latest'
+          sh 'docker push ${JFROG_ARTIFACTORY_REPO_NAME}/${DOCKER_IMAGE_NAME}:latest'
           }
         }
       }
