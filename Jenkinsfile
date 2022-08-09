@@ -35,16 +35,6 @@ pipeline {
   }
 
   stages {
-    stage ('init-step') {
-      steps {
-        container('maven') {
-          sh '''
-              echo "PATH = ${PATH}"
-              echo "M2_HOME = ${M2_HOME}"
-          '''
-        }
-      }
-    }
     stage('pull-repo-src') {
       steps {
         container('maven') {
@@ -59,6 +49,13 @@ pipeline {
       steps {
         container('maven') {
           sh 'mvn clean package -Djacoco.skip=true'
+        }
+      }
+    }
+    stage('push-jar') {
+      steps {
+        container('maven') {
+          sh 'mvn deploy -Djacoco.skip=true'
         }
       }
     }

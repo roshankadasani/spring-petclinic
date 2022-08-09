@@ -12,6 +12,14 @@
   </parent>
   <name>petclinic</name>
 
+  <distributionManagement>
+      <repository>
+          <id>central</id>
+          <name>a0c9fvp5vqzub-artifactory-primary-0-releases</name>
+          <url>https://rkdemo.jfrog.io/artifactory/spring-petclinic-mvn-libs-release</url>
+      </repository>
+  </distributionManagement>
+
   <properties>
 
     <!-- Generic properties -->
