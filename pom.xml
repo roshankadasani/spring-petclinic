@@ -12,19 +12,6 @@
   </parent>
   <name>petclinic</name>
 
-  <distributionManagement>
-      <repository>
-          <id>central</id>
-          <name>spring-petclinic-mvn-libs-release</name>
-          <url>https://rkdemo.jfrog.io/artifactory/spring-petclinic-mvn-libs-release</url>
-      </repository>
-      <snapshotRepository>
-        <id>snapshots</id>
-        <name>spring-petclinic-mvn-libs-snapshot</name>
-        <url>https://rkdemo.jfrog.io/artifactory/spring-petclinic-mvn-libs-snapshot</url>
-      </snapshotRepository>
-  </distributionManagement>
-
   <properties>
 
     <!-- Generic properties -->

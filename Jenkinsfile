@@ -52,13 +52,6 @@ pipeline {
         }
       }
     }
-    stage('push-jar') {
-      steps {
-        container('maven') {
-          sh 'mvn deploy -Djacoco.skip=true'
-        }
-      }
-    }
     stage('build-docker-image') {
       steps {
         container('docker') {
